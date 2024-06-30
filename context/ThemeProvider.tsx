@@ -9,12 +9,14 @@ const ThemeContext = createContext<IThemeContext | undefined>(undefined);
 export function ThemeProvder({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState("");
   const handleThemeChange = () => {
-    if (mode === "dark") {
-      setMode("light");
-      document.documentElement.classList.add("light");
-    } else {
-      setMode("dark");
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!localStorage.getItem("theme") &&
+        window.matchMedia("(prefers-color-scheme: dark").matches)
+    ) {
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   };
   useEffect(() => {
