@@ -10,10 +10,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Link from "next/link";
-import { SignedOut } from "@clerk/nextjs";
+import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { sidebarLinks } from "@/constants";
-const NavContent = () => {
+export const NavContent = () => {
   const pathname = usePathname();
   return (
     <section className="flex h-full flex-col gap-6 pt-16">
@@ -66,7 +66,7 @@ function MobileNav() {
             Dev<span className="text-primary-500">Flow</span>
           </p>
         </Link>
-        <div>
+        <div className="flex h-full flex-col justify-between pb-10">
           <SheetClose asChild>
             <NavContent />
           </SheetClose>
@@ -89,6 +89,16 @@ function MobileNav() {
               </SheetClose>
             </div>
           </SignedOut>
+
+          <SignedIn>
+            <SheetClose asChild>
+              <SignOutButton>
+                <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+                  <span className="primary-text-gradient">Logout</span>
+                </Button>
+              </SignOutButton>
+            </SheetClose>
+          </SignedIn>
         </div>
       </SheetContent>
     </Sheet>
