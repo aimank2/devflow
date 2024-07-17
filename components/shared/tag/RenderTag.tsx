@@ -3,9 +3,9 @@ import Link from "next/link";
 import React from "react";
 
 interface Props {
-  _id: number;
+  _id: number | string;
   name: string;
-  totalQuestions: number;
+  totalQuestions?: number;
   showCount?: boolean;
 }
 function RenderTag({ _id, name, totalQuestions, showCount }: Props) {

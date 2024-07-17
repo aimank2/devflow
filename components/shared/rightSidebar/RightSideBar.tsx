@@ -6,7 +6,7 @@ import chevronRight from "@/public/assets/icons/chevron-right.svg";
 import RenderTag from "../tag/RenderTag";
 function RightSidebar() {
   return (
-    <div className="mt-30 background-light900_dark200 sticky right-0  hidden h-screen w-[350px]  overflow-y-auto border-none px-6 pb-8 pt-36 shadow-sm lg:block">
+    <div className="mt-30 background-light900_dark200 sticky right-0 top-0  hidden h-screen w-[350px]  overflow-y-auto border-none px-6 pb-8 pt-36 shadow-sm lg:block">
       <div className="flex h-full flex-col gap-16">
         <div className="text-dark300_light900 flex flex-col gap-8">
           <p className="h3-bold">Top Questions</p>
