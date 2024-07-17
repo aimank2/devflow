@@ -20,12 +20,11 @@ import React, { useRef } from "react";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion } from "@/lib/actions/question.action";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 const type: string = "create";
 
 function Question({ mongoUserId }: { mongoUserId: string }) {
   const router = useRouter();
-  // const path = usePathname();
   const editorRef = useRef(null);
   const form = useForm<z.infer<typeof questionsSchema>>({
     resolver: zodResolver(questionsSchema),
