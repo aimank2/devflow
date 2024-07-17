@@ -1,15 +1,9 @@
 "use server";
 
-import {
-  CreateUserParams,
-  DeleteUserParams,
-  UpdateUserParams,
-  UpdateUserParams,
-} from "@/types";
+import { CreateUserParams, DeleteUserParams, UpdateUserParams } from "@/types";
 import User from "../db/user.model";
 import { connectToDb } from "../mongoose";
 import { revalidatePath } from "next/cache";
-import path from "path";
 import Question from "../db/question.model";
 
 export async function getUserById(params: any) {
