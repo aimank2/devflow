@@ -6,7 +6,7 @@ interface IUser extends Document {
   username: string;
   email: string;
   password?: string;
-  bio: string;
+  bio?: string;
   picture?: string;
   location?: string;
   portfolioWebsite?: string;
